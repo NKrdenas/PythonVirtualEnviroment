@@ -3,8 +3,9 @@ import charts
 import utils
 
 def run():
+    continent = input('Type Continent => ').capitalize()
     data = read_csv.read_csv('./data.csv')
-    data = list(filter(lambda item: item['Continent'] == 'South America', data))
+    data = list(filter(lambda item: item['Continent'] == continent, data))
 
     countries = list(map(lambda x: x['Country/Territory'], data))
     percentages = list(map(lambda x: x['World Population Percentage'], data))
